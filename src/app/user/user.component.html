@@ -1,8 +1,22 @@
 <div>
-<button>
-  <!-- <img [src]="'assets/users/' + SelectedUser.avatar" alt="User Image" /> -->
-  <img [src]="ImagePath" />
+  <button (click)="onSelectUser()">
+    <!-- <img [src]="'assets/users/' + SelectedUser.avatar" alt="User Image" /> -->
+    <!-- <img [src]="ImagePath" [alt]="SelectedUser.name"/> -->
 
-  <span> {{SelectedUser.name}} </span>
-</button>
+    <!-- Using Signals -->
+    <img [src]="imagePath()" [alt]="SelectedUser().name" />
+
+    <!-- <span> {{SelectedUser.name}} </span> -->
+
+    <!-- Using Signals -->
+    <span> {{ SelectedUser().name }} </span>
+  </button>
 </div>
+
+<!-- //NOTES
+
+Signals are executed as functions and fetches the latest values
+Signals are different from common state management mechanism
+Signals are new and were introduced in Angular 16
+
+-->
