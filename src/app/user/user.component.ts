@@ -1,6 +1,10 @@
 // import { Component } from '@angular/core';
 
+<<<<<<< HEAD
 import { Component, Input, Output ,EventEmitter} from '@angular/core';
+=======
+import { Component, Input } from '@angular/core';
+>>>>>>> 727258da5f57f6f47ae160c92f48989241555662
 
 import { DUMMY_USERS } from '../dummy-users';
 
@@ -16,6 +20,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.component.css',
 })
 export class UserComponent {
+<<<<<<< HEAD
   //Component Input
   @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
@@ -28,7 +33,17 @@ export class UserComponent {
 
   onSelectUser() {
     this.select.emit(this.id);
+=======
+
+  @Input() avatar!: string;
+  @Input() name!: string;
+
+  get ImagePath() {
+    return 'assets/users/' + this.avatar;
+>>>>>>> 727258da5f57f6f47ae160c92f48989241555662
   }
+
+  onSelectedUser() {}
 }
 
 //  //NOTES
