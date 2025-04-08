@@ -15,4 +15,8 @@ export class AppComponent {
   title = 'easy-task';
 
   users = DUMMY_USERS;
+
+  onSelectUser(id: string){
+    console.log("USER ID -> " + " " + id);
+  }
 }
