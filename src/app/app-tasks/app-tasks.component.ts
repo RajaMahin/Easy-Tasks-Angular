@@ -5,11 +5,10 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './app-tasks.component.html',
-  styleUrl: './app-tasks.component.css'
+  styleUrl: './app-tasks.component.css',
 })
-
-
 export class AppTasksComponent {
-  @Input({ required: true }) name!: string;
-
+  // @Input({ required: true }) name!: string;
+  @Input() name?: string;
+  // @Input() name: string | undefined;
 }

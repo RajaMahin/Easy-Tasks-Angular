@@ -24,22 +24,35 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class UserComponent {
   //Component Input
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) name!: string;
 
-  @Output() select = new EventEmitter<string>();
+  //Appropriate Objects As Inputs & Adding  Appropriate Typesss
+  @Input({ required: true }) user!: {
+    id: string;
+    avatar: string;
+    name: string;
+  };
+
+  @Output()
+  select = new EventEmitter<string>();
+
   // id = input.required<string>();
   // avatar = input.required<string>();
   // name = input.required<string>();
   // select = output<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    // return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
+
   }
 
   onSelectUser() {
-    this.select.emit(this.id);
+        this.select.emit(this.user.id);
+
+    // this.select.emit(this.id);
     // this.select.emit(this.id());
   }
 }
