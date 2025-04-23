@@ -15,6 +15,21 @@ import { DUMMY_USERS } from '../dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
+//Declarating type
+//With type you can define object types as well as other types
+// type User = {
+//   id: string;
+//   name: string;
+//   avatar: string;
+// };
+
+//Declaring Interface
+//With interface you can only define object types
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -29,11 +44,14 @@ export class UserComponent {
   // @Input({ required: true }) name!: string;
 
   //Appropriate Objects As Inputs & Adding  Appropriate Typesss
-  @Input({ required: true }) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  };
+  // @Input({ required: true }) user!: {
+  //   id: string;
+  //   avatar: string;
+  //   name: string;
+  // };
+
+  //Using Type OR Using Interface
+  @Input({ required: true }) user!: User;
 
   @Output()
   select = new EventEmitter<string>();
@@ -46,11 +64,10 @@ export class UserComponent {
   get imagePath() {
     // return 'assets/users/' + this.avatar;
     return 'assets/users/' + this.user.avatar;
-
   }
 
   onSelectUser() {
-        this.select.emit(this.user.id);
+    this.select.emit(this.user.id);
 
     // this.select.emit(this.id);
     // this.select.emit(this.id());
