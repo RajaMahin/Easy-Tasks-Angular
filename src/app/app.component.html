@@ -34,7 +34,7 @@
   <!-- <app-tasks [name]="selectedUser?.name" /> -->
   <!--CONDITIONAL OUTPUT -->
   @if(selectedUser){
-  <app-tasks [name]="selectedUser.name" />
+  <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name" />
   }@else{
   <p id="fallback">Select a user to see thier tasks!</p>
   }
