@@ -1,0 +1,64 @@
+/* Core Styles */
+article {
+  padding: 1rem;
+  color: #25113d;
+  background-color: #bf9ee5;
+  overflow-y: auto; /* Enables vertical scroll when needed */
+  max-height: 80vh; /* Controls how tall the article can be */
+
+  /* Firefox scrollbar support */
+  scrollbar-width: thin;
+  scrollbar-color: #8c5ad5 #2b143d;
+}
+
+h2 {
+  margin: 0;
+}
+
+time {
+  color: #3c2c50;
+}
+
+.actions {
+  text-align: right;
+  margin: 0;
+}
+
+.actions button {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #380774;
+  color: #decdf2;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #4a0774;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Scrollbar Styling for WebKit Browsers */
+article::-webkit-scrollbar {
+  width: 10px;
+}
+
+article::-webkit-scrollbar-track {
+  background: #2b143d; /* darker track for contrast */
+  border-radius: 10px;
+}
+
+article::-webkit-scrollbar-thumb {
+  background-color: #8c5ad5; /* matches theme accent */
+  border-radius: 10px;
+  border: 2px solid #2b143d; /* adds spacing and soft edge */
+}
+
+article::-webkit-scrollbar-thumb:hover {
+  background-color: #a572e9; /* lighter purple on hover */
+}
