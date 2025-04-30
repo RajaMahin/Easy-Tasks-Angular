@@ -12,7 +12,6 @@ import { AppTasksComponent } from './tasks/tasks.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'easy-task';
 
   users = DUMMY_USERS;
 

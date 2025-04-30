@@ -25,11 +25,9 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 //Declaring Interface
 //With interface you can only define object types
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+
+import { type User } from './user.model';
+
 @Component({
   selector: 'app-user',
   standalone: true,
