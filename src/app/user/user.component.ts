@@ -26,6 +26,8 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 //Declaring Interface
 //With interface you can only define object types
 
+
+
 import { type User } from './user.model';
 
 @Component({
@@ -50,7 +52,7 @@ export class UserComponent {
 
   //Using Type OR Using Interface
   @Input({ required: true }) user!: User;
-
+  @Input({ required: true}) selected! : boolean;
   @Output()
   select = new EventEmitter<string>();
 
